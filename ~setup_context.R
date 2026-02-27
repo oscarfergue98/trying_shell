@@ -10,17 +10,22 @@ if (length(args) == 0) {
   print(paste0("Using TAG: ", TAG))
 }
 
-RAW_DATA_PATH <- "C:/Users/cjgue/Documents/trying_shell_files/raw_data"
+MAIN_PATH <- "C:/Users/cjgue/Documents/trying_shell_files"
+
+RAW_DATA_PATH <- file.path(MAIN_PATH, 
+                           "/raw_data")
 
 MODEL_RUN_PATH <- file.path(
-  "C:/Users/cjgue/Documents/trying_shell_files/model_runs", 
+  MAIN_PATH,
+  "model_runs", 
   TAG
 )
 
 
 INTERMEDIARY_DATA_PATH <- 
   file.path(
-    "C:/Users/cjgue/Documents/trying_shell_files/model_runs",
+    MAIN_PATH,
+    "model_runs",
     TAG,
     "intermediary_data"
   )
@@ -28,7 +33,8 @@ INTERMEDIARY_DATA_PATH <-
 
 OUTPUT_DATA_PATH <- 
   file.path(
-    "C:/Users/cjgue/Documents/trying_shell_files/model_runs", 
+    MAIN_PATH,
+    "model_runs", 
     TAG, 
     "output_data"
   )
@@ -36,7 +42,8 @@ OUTPUT_DATA_PATH <-
 
 FINAL_PLOTS_PATH <- 
   file.path(
-    "C:/Users/cjgue/Documents/trying_shell_files/model_runs", 
+    "model_runs", 
     TAG,
     "plots"
   )
+
