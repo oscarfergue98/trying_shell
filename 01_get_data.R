@@ -20,7 +20,8 @@ final_df <-
   ) |> 
   dplyr::left_join(cpi_df, by = c("date" = "observation_date")) |> 
   dplyr::left_join(rgdp_df, by = c("date" = "observation_date")) |> 
-  dplyr::mutate(date = zoo::as.Date(date))
+  dplyr::mutate(date = zoo::as.Date(date)) |> 
+  dplyr::filter(lubridate::year(date) < 2025)
 
 
 # Write the final dataframe 
