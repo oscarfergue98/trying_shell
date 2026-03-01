@@ -8,6 +8,8 @@ if (length(args) == 0) {
   print("No args given, assuming we are testing")
   TAG <- "test"
   print(paste0("Using TAG: ", TAG))
+} else {
+  print(paste0("Using TAG: ", TAG))
 }
 
 MAIN_PATH <- "C:/Users/cjgue/Documents/trying_shell_files"
@@ -47,3 +49,4 @@ FINAL_PLOTS_PATH <-
     "plots"
   )
 
+fredr::fredr_set_key("f3a6e1148d769b8343f5c85eb05a5cfa")
