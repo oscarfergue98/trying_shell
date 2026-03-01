@@ -203,24 +203,11 @@ min_date <- min_date |>
 developing_dataset_truncated <- developing_dataset |> 
   dplyr::filter(date >= min_date$min_date)
 
-# Generate data for Matlab plots 
-
-plots_data <- developing_dataset_truncated |> 
-  dplyr::select(date,country,gdp,real_rate) |> 
-  dplyr::group_by(country) |> 
-  dplyr::mutate(trend = dplyr::row_number(), 
-         trend2 = trend^2, 
-         gdp = 100 * lm(gdp~trend+trend2)$residuals) |> 
-  dplyr::ungroup() |> 
-  dplyr::select(-trend,-trend2)
-
-writexl::write_xlsx(plots_data, file.path(INTERMEDIARY_DATA_PATH, "plots_data.xlsx"))
-
 # Divide real rate by 100 so that all variables are 
 # expressed in the same units!
 # Do not select the US real rate for now
 
-developing_dataset_truncated = developing_dataset_truncated |> 
+developing_dataset_truncated <- developing_dataset_truncated |> 
   dplyr::mutate(real_rate = real_rate / 100) |> 
   dplyr::select(-us_real_rate)
 
@@ -246,7 +233,6 @@ brazil <- brazil_data |>
 
 mexico <- mexico_data |>
   dplyr::mutate(date = format(zoo::as.yearqtr(date), format = "%Yq%q"))
-
 
 
 ecuador <- ecuador_data |>

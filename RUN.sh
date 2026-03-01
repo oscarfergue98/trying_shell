@@ -21,6 +21,6 @@ echo "Done With 01_get_data.R"
 # Run MATLAB in batch
 echo "Running MATLAB Code"
 export TAG=$1
-matlab -batch "mycode"
+matlab -batch "run_bvars"
 echo "TAG being passed to MATLAB: $TAG"
 echo "Done With MATLAB Code"

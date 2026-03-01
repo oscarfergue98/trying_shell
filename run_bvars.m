@@ -45,7 +45,7 @@ s.Bu = 5000;
 s.FEVD = 0; 
 s.F = 0; 
 s.results_path = OUTPUT_DATA; 
-s.workspace = 0; 
+s.workspace = 1; 
 s.IRFperiods = 21; 
 s.IRFt = 'Cholesky'; 
 
