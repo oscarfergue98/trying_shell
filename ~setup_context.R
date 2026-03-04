@@ -12,10 +12,12 @@ if (length(args) == 0) {
   print(paste0("Using TAG: ", TAG))
 }
 
-MAIN_PATH <- "C:/Users/cjgue/Documents/trying_shell_files"
+config_file <- yaml::read_yaml("config.yaml")
+
+MAIN_PATH <- config_file$data_path
 
 RAW_DATA_PATH <- file.path(MAIN_PATH, 
-                           "/raw_data")
+                           "raw_data")
 
 MODEL_RUN_PATH <- file.path(
   MAIN_PATH,

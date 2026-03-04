@@ -17,7 +17,7 @@ if isempty(TAG), TAG = "test"; end
 
 disp("Using TAG: " + TAG);
 
-BASE_PATH = "C:/Users/cjgue/Documents/trying_shell_files";
+BASE_PATH =  yaml.loadFile("config.yaml").data_path;
 MODEL_RUN_PATH    = fullfile(BASE_PATH, "model_runs", TAG);
 INTERMEDIARY_DATA = fullfile(MODEL_RUN_PATH, "intermediary_data");
 OUTPUT_DATA       = fullfile(MODEL_RUN_PATH, "output_data");
