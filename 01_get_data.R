@@ -252,6 +252,8 @@ developing_panel_bvar <- developing_panel_bvar |>
     dplyr::across(c(gdp, consumption, gfcf, nx, real_rate), ~ . * 100)
   )
 
+writexl::write_xlsx(developing_panel_bvar |> dplyr::filter(country=="argentina"), file.path(INTERMEDIARY_DATA_PATH, "df_python.xlsx"))
+
 developing_panel_bvar <- split(developing_panel_bvar, developing_panel_bvar$country)
 
 developing_panel_bvar <- lapply(developing_panel_bvar, function(x) {x <- x |> dplyr::select(-country)})

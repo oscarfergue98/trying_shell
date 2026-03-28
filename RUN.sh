@@ -18,9 +18,15 @@ echo "Running 01_get_data.R"
 Rscript 01_get_data.R $TAG
 echo "Done With 01_get_data.R"
 
-# Run MATLAB in batch
-echo "Running MATLAB Code"
-export TAG=$1
-matlab -batch "run_bvars"
-echo "TAG being passed to MATLAB: $TAG"
-echo "Done With MATLAB Code"
+# Run Python script
+
+echo "Running 02_plots_python.py"
+python 02_plots_python.py $TAG
+echo "Done With 02_plots_python.py"
+
+# # Run MATLAB in batch
+# echo "Running MATLAB Code"
+# export TAG=$1
+# matlab -batch "run_bvars"
+# echo "TAG being passed to MATLAB: $TAG"
+# echo "Done With MATLAB Code"
